@@ -2,15 +2,10 @@ count = 40
 
 
 def fibonacci(n):
-    if n == 0:
-        return 0
-    elif n == 1:
-        return 1
+    if n == 0 or n == 1:
+        return n
     else:
         return fibonacci(n-1) + fibonacci(n-2)
-
-
-print(fibonacci(count))
 
 
 def tail_fibonacci(n, init, accumulator):
@@ -20,9 +15,8 @@ def tail_fibonacci(n, init, accumulator):
         return tail_fibonacci(n-1, accumulator, init + accumulator)
 
 
-print(tail_fibonacci(count, 0, 1))
-
 lookup = {}
+
 
 def dp_fibonacci(n):
     if n == 0 or n == 1:
@@ -35,4 +29,6 @@ def dp_fibonacci(n):
             return lookup[n]
 
 
+print(fibonacci(count))
+print(tail_fibonacci(count, 0, 1))
 print(dp_fibonacci(count))
