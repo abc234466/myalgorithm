@@ -8,3 +8,13 @@ def fibonacci(n):
 
 
 print(fibonacci(15))
+
+
+def tail_fibonacci(n, init, accumulator):
+    if n == 0:
+        return init
+    else:
+        return tail_fibonacci(n-1, accumulator, init + accumulator)
+
+
+print(tail_fibonacci(16, 0, 1))
